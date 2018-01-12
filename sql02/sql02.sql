@@ -14,20 +14,16 @@ select department_id "부서",
        min(salary) "최저임금"
 from employees
 group by department_id
-order by avg(salary) desc,
-         max(salary) desc,
-         min(salary) desc;
+order by department_id desc;
 
 --문제4
-select department_id "부서",
+select job_id "부서",
        round(avg(salary),1) "평균임금",
        max(salary) "최고임금",
        min(salary) "최저임금"
 from employees
-group by department_id
-order by avg(salary) desc,
-         max(salary) desc,
-         min(salary) desc;
+group by job_id
+order by job_id desc;
 
 --문제5
 select to_char(min(hire_date),'YYYY"년" MM"월 " DD"일"') "가장 오래 근속한 직원"
